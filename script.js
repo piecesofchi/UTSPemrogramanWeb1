@@ -1,9 +1,28 @@
 // Dummy data login
-const users = [
-    { email: "user@example.com", password: "12345" },
-    { email: "chi@example.com", password: "chi123" }
+const dataPengguna = [
+    {
+        id: 1,
+        nama: "Rina Wulandari",
+        email: "rina@gmail.com",
+        password: "rina123",
+        role: "User",
+    },
+    {
+        id: 2,
+        nama: "Agus Pranoto",
+        email: "agus@gmail.com",
+        password: "agus123",
+        role: "User",
+    },
+    {
+        id: 3,
+        nama: "Siti Marlina",
+        email: "siti@gmail.com",
+        password: "siti123",
+        role: "Admin",
+    }
 ];
-
+ 
 // Login validation
 document.getElementById("loginForm").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -11,11 +30,21 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    const user = users.find(u => u.email === email && u.password === password);
+    const user = dataPengguna.find(u => u.email === email && u.password === password);
 
     if (user) {
         alert("Login berhasil!");
-        window.location.href = "dashboard.html";
+
+        // Simpan data pengguna yang login (opsional)
+        localStorage.setItem("userLogin", JSON.stringify(user));
+
+        // Kalau admin, arahkan ke halaman admin
+        if (user.role === "Admin") {
+            window.location.href = "admin-dashboard.html";
+        } else {
+            window.location.href = "dashboard.html";
+        }
+
     } else {
         alert("Email/password yang anda masukkan salah!");
     }
