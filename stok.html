@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informasi Stok Buku</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="stok-container">
+    <h2>📚 Informasi Stok / Katalog Buku</h2>
+
+    <table id="tabelBuku">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Judul Buku</th>
+          <th>Penulis</th>
+          <th>Harga</th>
+          <th>Stok</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- isi tabel diisi dari JS -->
+      </tbody>
+    </table>
+
+    <h3>➕ Tambah Buku Baru</h3>
+    <form id="formTambah">
+      <input type="text" id="judul" placeholder="Judul Buku" required>
+      <input type="text" id="penulis" placeholder="Penulis" required>
+      <input type="number" id="harga" placeholder="Harga" required>
+      <input type="number" id="stok" placeholder="Stok" required>
+      <button type="submit">Tambah</button>
+    </form>
+
+    <br>
+    <button onclick="goToPage('dashboard.html')">⬅ Kembali ke Dashboard</button>
+  </div>
+
+  <script src="js/data.js"></script>

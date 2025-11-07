@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tracking Pengiriman</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="tracking-container">
+    <h2>🚚 Tracking Pengiriman</h2>
+
+    <form id="formTracking">
+      <input type="text" id="noOrder" placeholder="Masukkan Nomor Delivery Order" required>
+      <button type="submit">Cari</button>
+    </form>
+
+    <div id="hasilTracking" class="hasil-tracking" style="display: none;">
+      <h3>📦 Detail Pengiriman</h3>
+      <p><strong>Nama Pemesan:</strong> <span id="namaPemesan"></span></p>
+      <p><strong>Status Pengiriman:</strong></p>
+      <div class="progress-bar">
+        <div id="progressFill"></div>
+      </div>
+      <ul>
+        <li><strong>Ekspedisi:</strong> <span id="ekspedisi"></span></li>
+        <li><strong>Tanggal Kirim:</strong> <span id="tanggalKirim"></span></li>
+        <li><strong>Jenis Paket:</strong> <span id="jenisPaket"></span></li>
+        <li><strong>Total Pembayaran:</strong> <span id="totalBayar"></span></li>
+      </ul>
+    </div>
+
+    <br>
+    <button onclick="goToPage('dashboard.html')">⬅ Kembali ke Dashboard</button>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
